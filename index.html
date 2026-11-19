@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>The Pagosa House</title><meta name="theme-color" content="#0f2238">
+<link rel="icon" href="favicon.ico" sizes="32x32"><link rel="icon" type="image/png" href="icon-192.png"><link rel="apple-touch-icon" href="icon-180.png"><link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-title" content="Pagosa House"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="The Pagosa House"><meta property="og:site_name" content="The Pagosa House"><meta property="og:description" content="Snow, weather, Wolf Creek cams and the family calendar.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://n8ilab.github.io/pagosa/"><meta property="og:image" content="https://n8ilab.github.io/pagosa/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#0f2238;--card:rgba(255,255,255,.07);--line:rgba(255,255,255,.12);--ac:#93c5fd;--ac2:#e0f2fe;--txt:#f1f5f9;--tint:rgba(15,34,56,.55)}
+body[data-t=frigid]{--bg:#0a1626;--card:rgba(186,230,253,.08);--ac:#7dd3fc;--ac2:#e0f2fe;--tint:rgba(173,216,255,.18)}
+body[data-t=cold]{--bg:#0f2238;--ac:#93c5fd;--ac2:#dbeafe;--tint:rgba(30,64,120,.30)}
+body[data-t=cool]{--bg:#10252c;--ac:#5eead4;--ac2:#ccfbf1;--tint:rgba(16,60,70,.30)}
+body[data-t=warm]{--bg:#24170d;--card:rgba(255,236,200,.07);--ac:#fbbf24;--ac2:#fef3c7;--tint:rgba(180,90,20,.28)}
+body[data-t=hot]{--bg:#26110a;--card:rgba(255,220,190,.07);--ac:#fb923c;--ac2:#ffedd5;--tint:rgba(200,70,20,.30)}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,"Segoe UI",system-ui,sans-serif;color:var(--txt);background:var(--bg);min-height:100vh;overflow-x:hidden;transition:background .6s}
+a{color:var(--ac)}
+.hero{position:relative;min-height:380px;padding:calc(env(safe-area-inset-top) + 22px) 20px 26px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;
+  background:linear-gradient(180deg,rgba(0,0,0,.05) 0%,var(--tint) 45%,var(--bg) 100%),url(house.jpg) center 40%/cover}
+#snow{position:absolute;inset:0;pointer-events:none}
+.kick{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--ac2);font-weight:800;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+h1{margin:4px 0 2px;font-size:36px;line-height:1.05;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+.sub{color:var(--ac2);font-size:14px;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+.now{display:flex;align-items:flex-end;gap:14px;margin-top:14px}.now .t{font-size:64px;font-weight:900;line-height:.9;text-shadow:0 2px 16px rgba(0,0,0,.5)}
+.now .d{font-size:15px;line-height:1.4;text-shadow:0 1px 8px rgba(0,0,0,.7)}
+.tbtn{position:absolute;z-index:3;top:calc(env(safe-area-inset-top) + 14px);right:14px;display:flex;gap:6px}
+.tbtn a{background:rgba(0,0,0,.35);color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 11px;font-size:13px;font-weight:700;backdrop-filter:blur(6px)}
+main{padding:0 14px 40px;max-width:760px;margin:0 auto}
+.c{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin-top:12px;backdrop-filter:blur(4px)}
+.l{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ac);font-weight:800;margin-bottom:8px}
+.s{font-size:13px;color:#cbd5e1}
+.big-btn{display:block;width:100%;margin-top:14px;border:0;border-radius:16px;padding:15px;font-size:18px;font-weight:900;background:linear-gradient(135deg,var(--ac2),var(--ac));color:#0b1526;box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.alert{border-color:#f87171;background:rgba(248,113,113,.12)}
+.nums{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;text-align:center}.nums div{background:rgba(255,255,255,.06);border-radius:12px;padding:8px 2px}
+.nums b{display:block;font-size:24px;font-weight:900;color:#fff}.nums small{font-size:10px;color:var(--ac2);letter-spacing:.5px;text-transform:uppercase}
+.badge{display:inline-block;font-size:12px;font-weight:800;border-radius:999px;padding:3px 9px;background:rgba(34,197,94,.2);color:#86efac;margin-left:6px}
+.bars{display:flex;align-items:flex-end;gap:4px;height:90px;margin-top:10px}.bars div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.bars i{display:block;width:100%;border-radius:5px 5px 2px 2px;background:linear-gradient(180deg,#fff,var(--ac));min-height:2px}.bars i.out{opacity:.45}
+.bars span{font-size:10px;color:#cbd5e1;margin-top:3px}.bars em{font-style:normal;font-size:10px;color:#fff;margin-bottom:2px}
+.pow{margin-top:10px;padding:10px;border-radius:12px;background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(147,197,253,.15));font-weight:800}
+.cams{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.cams button{border:1px solid var(--line);background:linear-gradient(160deg,#1e3a5f,#0b1526);color:#fff;border-radius:14px;padding:16px 6px;font-weight:800;font-size:13px}
+.cams button i{display:block;font-style:normal;font-size:26px;margin-bottom:4px}
+.fc{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}.fc::-webkit-scrollbar{display:none}
+.fd{min-width:78px;text-align:center;background:rgba(255,255,255,.06);border-radius:14px;padding:8px 4px;font-size:13px}.fd b{display:block}.fd .ic{font-size:24px;margin:2px 0}
+.fd .sn{color:#e0f2fe;font-weight:800}.fd.today{outline:2px solid var(--ac)}
+.mnav{display:flex;align-items:center;gap:8px}.mnav b{flex:1;font-size:17px}.mnav button{background:rgba(255,255,255,.12);border:0;color:#fff;border-radius:10px;width:40px;height:34px;font-size:20px}.mnav button:disabled{opacity:.3}
+.cg{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:8px}.cg .h{font-size:11px;text-align:center;color:var(--ac)}
+.cg .d{min-height:54px;border-radius:10px;background:rgba(255,255,255,.06);padding:4px;font-size:12px;position:relative;cursor:pointer}
+.cg .d.past{opacity:.35}.cg .d.today{outline:2px solid var(--ac)}.cg .d.we{background:rgba(255,255,255,.1)}
+.cg .d.part{background:linear-gradient(135deg,rgba(59,130,246,.45),rgba(255,255,255,.06))}.cg .d.full{background:linear-gradient(135deg,#2563eb,#1e40af)}
+.cg .d.pend{background-image:repeating-linear-gradient(135deg,rgba(251,191,36,.35) 0 6px,transparent 6px 12px)}.cg .d.cf{background:linear-gradient(135deg,#b91c1c,#7f1d1d)}
+.cg .d.sel{outline:3px solid #fde68a}.cg .d .rm{position:absolute;left:4px;right:4px;bottom:4px;display:flex;gap:2px}.cg .d .rm i{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.18)}
+.cg .d .rm i.on{background:#fff}.cg .d .sf{position:absolute;top:3px;right:4px;font-size:11px}.cg .d .nm{display:block;font-size:9px;line-height:1.1;color:#fde68a;overflow:hidden;max-height:20px}
+.leg{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;color:#cbd5e1;margin-top:8px}.leg i{display:inline-block;width:12px;height:12px;border-radius:4px;margin-right:4px;vertical-align:-2px}
+.form{display:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}.form.on{display:block}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:8px 0}.seg button{border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;border-radius:12px;padding:10px 4px;font-weight:800;font-size:14px}
+.seg button.on{background:var(--ac);color:#0b1526}.seg button:disabled{opacity:.3}
+.frm{display:grid;grid-template-columns:1fr 92px;gap:8px}.frm input{width:100%;min-width:0;padding:12px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.25);color:#fff;font-size:16px}.frm .w{grid-column:1/-1}
+.stay{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}.stay .dot{width:10px;height:10px;border-radius:50%}
+.links{display:flex;flex-wrap:wrap;gap:6px}.links a{font-size:13px;color:#fff;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 12px;background:rgba(255,255,255,.05)}
+.sheet{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;z-index:50;padding:14px}.sheet.on{display:flex}
+.sh-in{background:var(--bg);border:1px solid var(--line);width:100%;max-width:640px;max-height:90vh;overflow:auto;border-radius:20px;padding:14px}
+.x{background:rgba(255,255,255,.12);border:0;color:#fff;border-radius:50%;width:34px;height:34px;font-size:16px}
+iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:12px;background:#000}
+.ck li{padding:6px 0;border-bottom:1px solid var(--line);list-style:none}.ck{padding:0;margin:0}
+footer{text-align:center;margin-top:24px}footer b{color:var(--ac);font-size:17px}
+#gate{position:fixed;inset:0;z-index:99;background:radial-gradient(circle at 50% 30%,#1e3a5f,#0a1626);display:grid;place-items:center}
+</style></head><body data-t="cold">
+<div id="gate"><form id="gf" style="text-align:center;color:#fff"><img src="icon-180.png" alt="" style="width:84px;height:84px;border-radius:20px"><h2 style="margin:10px 0 4px">The Pagosa House</h2>
+  <p style="color:#93c5fd;margin:0 0 12px">Enter the family code</p><input id="gp" type="password" inputmode="numeric" autocomplete="off" style="font-size:24px;padding:12px;border-radius:12px;border:0;width:170px;text-align:center"><br>
+  <button style="margin-top:12px;padding:12px 28px;border-radius:12px;border:0;background:#93c5fd;font-weight:800;font-size:17px">Open</button><p id="ge" style="color:#fca5a5"></p></form></div>
+<script>(()=>{const H='feda2fbbd09ef3f338173049e4e38941ecae76d088325435d75d2ca1073f4633',g=document.getElementById('gate');if(localStorage.getItem('pg.ok')===H){g.remove();return;}
+document.getElementById('gf').onsubmit=async e=>{e.preventDefault();const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode('pg:'+document.getElementById('gp').value));
+const h=[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('');if(h===H){localStorage.setItem('pg.ok',h);g.remove();}else document.getElementById('ge').textContent='Not quite. Ask Ronyn or Raelyn.';};})();</script>
+
+<div class="hero"><canvas id="snow"></canvas>
+  <div class="tbtn"><a href="#" id="a2hs">📲 Get the app</a><a href="#" id="shr">💬 Share</a></div>
+  <div class="kick" id="kick">Pagosa Springs · 7,126 ft</div>
+  <h1>The Pagosa House</h1>
+  <div class="now"><div class="t" id="nt">–</div><div class="d" id="nd">Loading the mountain…</div></div>
+  <button class="big-btn" id="bookTop">📅 Book the house</button>
+</div>
+<main>
+  <div id="al"></div>
+  <div class="c" id="ski" style="display:none"><div class="l">⛷ Wolf Creek today <span id="wcOpen"></span></div>
+    <div class="nums" id="wcN"></div><div class="s" id="wcS" style="margin-top:8px"></div>
+    <div class="pow" id="pow" style="display:none"></div>
+    <div class="l" style="margin-top:14px">❄ Snow coming to the mountain</div><div class="bars" id="mtnBars"></div>
+    <div class="s" id="mtnS" style="margin-top:6px"></div>
+    <div class="l" style="margin-top:14px">📏 Snow depth at the summit (last 10 days)</div><div class="bars" id="depthBars" style="height:70px"></div>
+  </div>
+  <div class="c"><div class="l">🎥 Wolf Creek live cams</div>
+    <div class="cams"><button data-cam="wolfcreeksummit"><i>🏔</i>Summit</button><button data-cam="wolfcreektreasure"><i>🏠</i>Base area</button><button data-cam="wolfcreektresurlift"><i>🚡</i>Treasure lift</button></div></div>
+  <div class="c"><div class="l">🌤 Pagosa forecast</div><div class="fc" id="fc"></div><div class="s" id="fcT" style="margin-top:10px;line-height:1.5"></div></div>
+  <div class="c" id="calC"><div class="mnav"><button id="mP">‹</button><b id="mT"></b><button id="mN">›</button></div>
+    <div class="cg" id="cg"></div>
+    <div class="leg"><span><i style="background:linear-gradient(135deg,#2563eb,#1e40af)"></i>Full</span><span><i style="background:rgba(59,130,246,.55)"></i>Some rooms</span>
+      <span><i style="background:repeating-linear-gradient(135deg,rgba(251,191,36,.7) 0 3px,transparent 3px 6px)"></i>Waiting on OK</span><span><i style="background:#b91c1c"></i>Needs a chat</span><span>❄ snow on the mountain</span></div>
+    <div class="s" id="sel" style="margin-top:8px">Tap your first night, then your last night.</div>
+    <div class="form" id="form">
+      <div class="l" style="margin:0">How much of the house?</div>
+      <div class="seg" id="seg"><button data-r="1">1 room</button><button data-r="2">2 rooms</button><button data-r="3">3 rooms</button><button data-r="all">Whole house</button></div>
+      <div class="frm"><input id="bName" placeholder="Your name"><input id="bG" type="number" min="0" placeholder="Guests"><input class="w" id="bW" placeholder="Guest names (who's coming)"><input class="w" id="bN" placeholder="Note (arriving late, dogs, skiing…)"></div>
+      <button class="big-btn" id="bGo">📧 Send the request</button>
+      <div class="s" style="margin-top:8px">Your email app opens with it filled in: just tap Send. Ronyn and Raelyn both get it; the first OK books it.</div>
+    </div>
+    <div class="l" style="margin-top:16px">Coming up</div><div id="up"></div></div>
+  <div class="c"><div class="l">🧰 Opening &amp; closing checklist</div><ul class="ck"><li>🔜 Ronyn &amp; Raelyn's winterize steps go here as a tap-to-check list.</li></ul></div>
+  <div class="c"><div class="l">🔗 Handy</div><div class="links">
+    <a href="https://wolfcreekski.com/snow-report/" target="_blank" rel="noopener">⛷ Wolf Creek report</a>
+    <a href="https://www.cotrip.org/" target="_blank" rel="noopener">🛣 Wolf Creek Pass roads</a>
+    <a href="https://avalanche.state.co.us/" target="_blank" rel="noopener">⚠ Avalanche</a>
+    <a href="https://forecast.weather.gov/MapClick.php?lat=37.2594&lon=-107.0207" target="_blank" rel="noopener">🌨 NWS forecast</a>
+    <a href="https://www.pagosahotsprings.com/" target="_blank" rel="noopener">♨ Hot springs</a>
+    <a href="https://maps.google.com/?q=516+S+11th+St,+Pagosa+Springs,+CO+81147" target="_blank" rel="noopener">📍 Directions</a></div></div>
+  <footer><b>Built by N8</b><div class="s" id="foot" style="margin-top:6px"></div></footer>
+</main>
+<div class="sheet" id="cam"><div class="sh-in"><div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><b id="camT" style="flex:1;font-size:18px"></b><button class="x" id="camX">✕</button></div><iframe id="camF" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  <div class="s" style="margin-top:8px">Live from Wolf Creek Ski Area.</div></div></div>
+<div class="sheet" id="hs"><div class="sh-in"><div style="display:flex;align-items:center;gap:10px"><img src="icon-180.png" alt="" style="width:48px;height:48px;border-radius:12px"><b style="font-size:19px;flex:1">Put it on your phone</b><button class="x" id="hsX">✕</button></div>
+  <div id="hsIOS" style="margin-top:10px;font-size:15px;line-height:1.6"><b>iPhone</b> (Safari)<ol style="margin:4px 0 8px;padding-left:22px"><li>Tap the <b>three lines ☰</b> next to the web address at the bottom</li><li>Tap <b>Share</b></li><li>Scroll down, tap <b>Add to Home Screen</b>, then <b>Add</b></li></ol></div>
+  <div id="hsAnd" style="margin-top:10px;font-size:15px;line-height:1.6"><b>Android</b> (Chrome)<ol style="margin:4px 0 8px;padding-left:22px"><li>Tap <b>⋮</b> (top right)</li><li>Tap <b>Add to Home screen</b> or <b>Install app</b></li></ol></div>
+  <div class="s">Enter the code one more time the first time you open the app.</div></div></div>
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
+const fmtD = s => new Date(s + 'T12:00').toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' });
+const wd = s => new Date(s + 'T12:00').toLocaleDateString([], { weekday: 'short' });
+let D = {}, TOTAL = 4, BK = [];
+fetch('data.json?v=' + Date.now(), { cache: 'no-store' }).then(r => r.json()).then(d => { D = d; TOTAL = d.bk.rooms_total; BK = d.bk.bookings; render(); }).catch(e => { $('nd').textContent = 'Could not load the forecast.'; });
+
+function render() {
+  const th = D.theme || { name: 'cold' }; document.body.dataset.t = th.name;
+  document.querySelector('meta[name=theme-color]').content = getComputedStyle(document.body).getPropertyValue('--bg').trim();
+  snow(th.snow ? 140 : (th.name === 'frigid' || th.name === 'cold') ? 45 : 0);
+  const n = D.now || {}, today = (D.town || []).find(x => x.date === iso(new Date())) || {};
+  $('nt').textContent = n.temp != null ? n.temp + '°' : '–';
+  $('nd').innerHTML = `${n.ico || ''} <b>${esc(n.txt)}</b><br>Feels ${n.feels}° · wind ${n.wind} mph<br>Today ${today.hi ?? '–'}° / ${today.lo ?? '–'}°`;
+  $('al').innerHTML = (D.alerts || []).map(a => `<div class="c alert"><div class="l" style="color:#fca5a5">⚠ ${esc(a.event)}</div><div class="s">${esc(a.head)}</div></div>`).join('');
+  // ⛷ Wolf Creek
+  const w = D.wolfcreek || {};
+  if (D.winter) {
+    $('ski').style.display = 'block';
+    $('wcOpen').innerHTML = w.open ? '<span class="badge">LIFTS OPEN</span>' : '';
+    $('wcN').innerHTML = [['24 hr', w.h24], ['48 hr', w.h48], ['Storm', w.storm], ['Midway', w.midway], ['Season', w.season]]
+      .map(([k, v]) => `<div><b>${v ?? '–'}${v != null ? '″' : ''}</b><small>${k}</small></div>`).join('');
+    $('wcS').innerHTML = `${w.day ? '<b>' + esc(w.day) + ' report.</b> ' : ''}${esc(w.surface || '')}`;
+    // mountain snow: NWS for the next 7 days, model outlook after that
+    const ns = D.mtn_nws_snow || {}, tdy = iso(new Date());
+    const days = (D.mtn || []).filter(x => x.date >= tdy).slice(0, 14).map(x => ({ date: x.date, v: ns[x.date] != null ? ns[x.date] : x.snow, out: ns[x.date] == null }));
+    const mx = Math.max(2, ...days.map(x => x.v)), tot7 = days.slice(0, 7).reduce((a, b) => a + b.v, 0), tot14 = days.reduce((a, b) => a + b.v, 0);
+    $('mtnBars').innerHTML = days.map(x => `<div><em>${x.v >= .5 ? x.v.toFixed(x.v < 10 ? 1 : 0) : ''}</em><i class="${x.out ? 'out' : ''}" style="height:${Math.max(2, x.v / mx * 100)}%"></i><span>${wd(x.date)[0]}${+x.date.slice(8)}</span></div>`).join('');
+    $('mtnS').innerHTML = `Next 7 days: <b>${tot7.toFixed(1)}″</b> at the summit · 2-week outlook <b>${tot14.toFixed(0)}″</b> <span style="opacity:.7">(faded bars = long-range guess)</span>`;
+    const big = days.find(x => x.v >= 6);
+    if (big || w.h24 >= 6) { $('pow').style.display = 'block'; $('pow').textContent = w.h24 >= 6 ? `❄ Powder day! ${w.h24}″ fell in the last 24 hours at Wolf Creek.` : `❄ Powder alert: about ${big.v.toFixed(0)}″ forecast on ${fmtD(big.date)}.`; }
+    const sn = (D.snotel || []).filter(x => x.depth != null), dm = Math.max(10, ...sn.map(x => x.depth));
+    $('depthBars').innerHTML = sn.map((x, i) => { const ch = i ? x.depth - sn[i - 1].depth : 0;
+      return `<div><em>${x.depth}″</em><i style="height:${x.depth / dm * 100}%;${ch > 0 ? 'background:linear-gradient(180deg,#fff,#60a5fa)' : 'opacity:.7'}"></i><span>${wd(x.date)[0]}${+x.date.slice(8)}</span></div>`; }).join('');
+  }
+  // 🌤 forecast
+  $('fc').innerHTML = (D.town || []).filter(x => x.date >= iso(new Date())).slice(0, 10).map((x, i) => `<div class="fd ${i ? '' : 'today'}"><b>${i ? wd(x.date) : 'Today'}</b><div class="ic">${x.ico}</div>${x.hi}° <span style="opacity:.6">${x.lo}°</span>${x.snow >= .1 ? `<div class="sn">❄ ${x.snow}″</div>` : x.pop >= 20 ? `<div class="s">💧${x.pop}%</div>` : ''}</div>`).join('');
+  $('fcT').innerHTML = (D.nws || []).slice(0, 2).map(p => `<b>${esc(p.name)}:</b> ${esc(p.detail)}`).join('<br>');
+  $('foot').textContent = `Updated ${D.at || ''} · NWS · Open-Meteo · Wolf Creek Ski Area · NRCS SNOTEL`;
+  drawCal();
+}
+
+// ❄ falling snow
+function snow(nf) {
+  const c = $('snow'), x = c.getContext('2d'); if (!nf) return;
+  const fit = () => { c.width = c.offsetWidth; c.height = c.offsetHeight; }; fit(); addEventListener('resize', fit);
+  const F = Array.from({ length: nf }, () => ({ x: Math.random() * c.width, y: Math.random() * c.height, r: Math.random() * 2.4 + .6, s: Math.random() * .8 + .3, d: Math.random() * 2 * Math.PI }));
+  (function tick() { x.clearRect(0, 0, c.width, c.height); x.fillStyle = 'rgba(255,255,255,.85)';
+    for (const f of F) { f.y += f.s; f.d += .01; f.x += Math.sin(f.d) * .4; if (f.y > c.height) { f.y = -4; f.x = Math.random() * c.width; } x.beginPath(); x.arc(f.x, f.y, f.r, 0, 7); x.fill(); }
+    requestAnimationFrame(tick); })();
+}
+
+// 📅 calendar: a whole year, rooms per night
+let MI = 0, SEL = [], RM = null;
+const on = ds => BK.filter(b => b.start <= ds && ds <= b.end);
+const used = ds => on(ds).reduce((a, b) => a + (b.rooms === 'all' ? TOTAL : +b.rooms), 0);
+const rl = r => r === 'all' ? 'whole house' : r + ' room' + (r == 1 ? '' : 's');
+const stLbl = { booked: '', pending: ' · waiting on OK', conflict: ' · ⚠ needs a chat' };
+function drawCal() {
+  const base = new Date(); base.setDate(1); const M = new Date(base.getFullYear(), base.getMonth() + MI, 1), y = M.getFullYear(), m = M.getMonth();
+  $('mT').textContent = M.toLocaleDateString([], { month: 'long', year: 'numeric' }); $('mP').disabled = MI <= 0; $('mN').disabled = MI >= 12;
+  const today = iso(new Date()), snowD = {}; (D.mtn || []).forEach(x => { const v = (D.mtn_nws_snow || {})[x.date] ?? x.snow; if (v >= 2) snowD[x.date] = v; });
+  let h = ['S', 'M', 'T', 'W', 'T', 'F', 'S'].map(x => `<div class="h">${x}</div>`).join('') + '<div></div>'.repeat(M.getDay());
+  for (let d = 1; d <= new Date(y, m + 1, 0).getDate(); d++) {
+    const ds = iso(new Date(y, m, d)), L = on(ds), u = Math.min(TOTAL, used(ds)), w = new Date(y, m, d).getDay();
+    const cls = [ds < today ? 'past' : '', ds === today ? 'today' : '', w === 0 || w === 6 ? 'we' : '', L.some(b => b.status === 'conflict') ? 'cf' : u >= TOTAL ? 'full' : u ? 'part' : '',
+      L.some(b => b.status === 'pending') ? 'pend' : '', (SEL.length === 2 ? ds >= SEL[0] && ds <= SEL[1] : SEL[0] === ds) ? 'sel' : ''].join(' ');
+    h += `<div class="d ${cls}" data-d="${ds}">${d}${snowD[ds] ? '<span class="sf">❄</span>' : ''}${L.length ? `<span class="nm">${esc(L[0].name.split(/[ ,&]/)[0])}${L.length > 1 ? ' +' + (L.length - 1) : ''}</span>` : ''}
+      <span class="rm">${Array.from({ length: TOTAL }, (_, i) => `<i class="${i < u ? 'on' : ''}"></i>`).join('')}</span></div>`;
+  }
+  $('cg').innerHTML = h;
+  $('cg').querySelectorAll('.d').forEach(el => el.onclick = () => pick(el.dataset.d));
+  const up = BK.filter(b => b.end >= today).sort((a, b) => a.start.localeCompare(b.start));
+  $('up').innerHTML = up.map(b => `<div class="stay"><span class="dot" style="background:${b.status === 'conflict' ? '#ef4444' : b.status === 'pending' ? '#fbbf24' : '#3b82f6'}"></span><span style="flex:1"><b>${esc(b.name)}</b> · ${fmtD(b.start)} → ${fmtD(b.end)}<br><small class="s">${rl(b.rooms)}${b.guests ? ' · ' + b.guests + ' guests' : ''}${b.who ? ' · ' + esc(b.who) : ''}${stLbl[b.status] || ''}</small></span></div>`).join('') || '<div class="s">Nobody booked yet. Be the first!</div>';
+}
+function pick(ds) {
+  if (ds < iso(new Date())) return;
+  SEL = SEL.length !== 1 ? [ds] : ds < SEL[0] ? [ds, SEL[0]] : [SEL[0], ds];
+  const a = SEL[0], b = SEL[1] || SEL[0]; let mxu = 0;
+  for (let d = new Date(a + 'T12:00'); iso(d) <= b; d.setDate(d.getDate() + 1)) mxu = Math.max(mxu, used(iso(d)));
+  const free = TOTAL - mxu, L = on(ds);
+  $('sel').innerHTML = (SEL.length === 1 ? `From <b>${fmtD(a)}</b>: tap your last night (or send it as one night).` : `<b>${fmtD(a)} → ${fmtD(b)}</b>`)
+    + `<br>${free > 0 ? `🛏 ${free === TOTAL ? 'Whole house open' : free + ' room' + (free > 1 ? 's' : '') + ' open'}` : '⛔ Full those nights'}`
+    + (L.length ? '<br>' + L.map(x => `🏠 ${esc(x.name)} (${rl(x.rooms)}${stLbl[x.status] || ''})`).join('<br>') : '');
+  $('seg').querySelectorAll('button').forEach(x => { x.disabled = (x.dataset.r === 'all' ? TOTAL : +x.dataset.r) > free; x.classList.toggle('on', x.dataset.r === RM && !x.disabled); });
+  if (RM && $('seg').querySelector(`[data-r="${RM}"]`).disabled) RM = null;
+  $('form').classList.toggle('on', free > 0); $('bName').value = $('bName').value || localStorage.getItem('pg.name') || '';
+  drawCal();
+}
+$('seg').querySelectorAll('button').forEach(x => x.onclick = () => { RM = x.dataset.r; $('seg').querySelectorAll('button').forEach(y => y.classList.toggle('on', y === x)); });
+$('mP').onclick = () => { MI--; drawCal(); }; $('mN').onclick = () => { MI++; drawCal(); };
+$('bookTop').onclick = () => { $('calC').scrollIntoView({ behavior: 'smooth' }); };
+$('bGo').onclick = () => {
+  if (!SEL.length) return alert('Tap your dates first.'); if (!RM) return alert('Pick how many rooms.');
+  const name = $('bName').value.trim(); if (!name) return alert('Add your name.'); localStorage.setItem('pg.name', name);
+  const s = SEL[0], e = SEL[1] || SEL[0], sub = `PAGOSA BOOKING: ${RM === 'all' ? 'all' : RM + ' rooms'} ${s} to ${e}`;
+  const body = `Name: ${name}\nRooms: ${rl(RM)}\nNumber of guests: ${$('bG').value || ''}\nGuest names: ${$('bW').value}\nArriving (day/time): \nLeaving (day/time): \nNote: ${$('bN').value}\n\n(Fill in anything blank, keep the subject line as it is, then tap Send.)`;
+  location.href = 'mailto:n8ilab@gmail.com?subject=' + encodeURIComponent(sub) + '&body=' + encodeURIComponent(body);
+  $('sel').innerHTML = '📧 Your email app is opening: just tap <b>Send</b>. It shows here as "waiting on OK" until Ronyn or Raelyn approves.';
+};
+// 🎥 cams
+document.querySelectorAll('[data-cam]').forEach(b => b.onclick = () => { $('camT').textContent = '🎥 ' + b.textContent.trim(); $('camF').src = 'https://live2.brownrice.com/embed/' + b.dataset.cam; $('cam').classList.add('on'); });
+$('camX').onclick = () => { $('cam').classList.remove('on'); $('camF').src = 'about:blank'; };
+// 📲 / 💬
+(() => { const standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone, ua = navigator.userAgent;
+  $('shr').onclick = e => { e.preventDefault(); const msg = "The Pagosa House: snow, weather, Wolf Creek cams + the family calendar. Code 2469 " + String.fromCharCode(10) + "https://n8ilab.github.io/pagosa/";
+    location.href = (/iPhone|iPad|iPod|Mac/.test(ua) ? 'sms:&body=' : 'sms:?body=') + encodeURIComponent(msg); };
+  if (standalone) $('a2hs').style.display = 'none';
+  if (/iPhone|iPad|iPod/.test(ua)) $('hsAnd').style.display = 'none'; if (/Android/.test(ua)) $('hsIOS').style.display = 'none';
+  $('a2hs').onclick = e => { e.preventDefault(); $('hs').classList.add('on'); }; $('hsX').onclick = () => $('hs').classList.remove('on');
+  document.querySelectorAll('.sheet').forEach(s => s.onclick = e => { if (e.target === s) { s.classList.remove('on'); $('camF').src = 'about:blank'; } });
+})();
+</script></body></html>
