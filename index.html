@@ -54,7 +54,7 @@ main{padding:0 14px 40px;max-width:760px;margin:0 auto}
 .cg .d .rm i.on{background:#fff}.cg .d .sf{position:absolute;top:3px;right:4px;font-size:11px}.cg .d .nm{display:block;font-size:9px;line-height:1.1;color:#fde68a;overflow:hidden;max-height:20px}
 .leg{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;color:#cbd5e1;margin-top:8px}.leg i{display:inline-block;width:12px;height:12px;border-radius:4px;margin-right:4px;vertical-align:-2px}
 .form{display:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}.form.on{display:block}
-.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:8px 0}.seg button{border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;border-radius:12px;padding:10px 4px;font-weight:800;font-size:14px}
+.seg{display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:6px;margin:8px 0}.seg button{border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;border-radius:12px;padding:10px 4px;font-weight:800;font-size:14px}
 .seg button.on{background:var(--ac);color:#0b1526}.seg button:disabled{opacity:.3}
 .frm{display:grid;grid-template-columns:1fr 92px;gap:8px}.frm input{width:100%;min-width:0;padding:12px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.25);color:#fff;font-size:16px}.frm .w{grid-column:1/-1}
 .stay{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}.stay .dot{width:10px;height:10px;border-radius:50%}
@@ -100,7 +100,8 @@ const h=[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('');i
     <div class="s" id="sel" style="margin-top:8px">Tap your first night, then your last night.</div>
     <div class="form" id="form">
       <div class="l" style="margin:0">How much of the house?</div>
-      <div class="seg" id="seg"><button data-r="1">1 room</button><button data-r="2">2 rooms</button><button data-r="3">3 rooms</button><button data-r="all">Whole house</button></div>
+      <div class="seg" id="seg"><button data-r="1">1 bedroom</button><button data-r="2">2 bedrooms</button><button data-r="all">Whole house<small style="display:block;font-weight:600;font-size:11px;opacity:.8">3 bedrooms + living room</small></button></div>
+      <div class="s">The living room sleeps a few (great for kids) and comes with the whole house.</div>
       <div class="frm"><input id="bName" placeholder="Your name"><input id="bG" type="number" min="0" placeholder="Guests"><input class="w" id="bW" placeholder="Guest names (who's coming)"><input class="w" id="bN" placeholder="Note (arriving late, dogs, skiing…)"></div>
       <button class="big-btn" id="bGo">📧 Send the request</button>
       <div class="s" style="margin-top:8px">Your email app opens with it filled in: just tap Send. Ronyn and Raelyn both get it; the first OK books it.</div>
@@ -180,7 +181,7 @@ function snow(nf) {
 let MI = 0, SEL = [], RM = null;
 const on = ds => BK.filter(b => b.start <= ds && ds <= b.end);
 const used = ds => on(ds).reduce((a, b) => a + (b.rooms === 'all' ? TOTAL : +b.rooms), 0);
-const rl = r => r === 'all' ? 'whole house' : r + ' room' + (r == 1 ? '' : 's');
+const rl = r => r === 'all' ? 'whole house' : r + ' bedroom' + (r == 1 ? '' : 's');
 const stLbl = { booked: '', pending: ' · waiting on OK', conflict: ' · ⚠ needs a chat' };
 function drawCal() {
   const base = new Date(); base.setDate(1); const M = new Date(base.getFullYear(), base.getMonth() + MI, 1), y = M.getFullYear(), m = M.getMonth();
@@ -206,7 +207,7 @@ function pick(ds) {
   for (let d = new Date(a + 'T12:00'); iso(d) <= b; d.setDate(d.getDate() + 1)) mxu = Math.max(mxu, used(iso(d)));
   const free = TOTAL - mxu, L = on(ds);
   $('sel').innerHTML = (SEL.length === 1 ? `From <b>${fmtD(a)}</b>: tap your last night (or send it as one night).` : `<b>${fmtD(a)} → ${fmtD(b)}</b>`)
-    + `<br>${free > 0 ? `🛏 ${free === TOTAL ? 'Whole house open' : free + ' room' + (free > 1 ? 's' : '') + ' open'}` : '⛔ Full those nights'}`
+    + `<br>${free > 0 ? `🛏 ${free === TOTAL ? 'Whole house open' : free + ' bedroom' + (free > 1 ? 's' : '') + ' open'}` : '⛔ Full those nights'}`
     + (L.length ? '<br>' + L.map(x => `🏠 ${esc(x.name)} (${rl(x.rooms)}${stLbl[x.status] || ''})`).join('<br>') : '');
   $('seg').querySelectorAll('button').forEach(x => { x.disabled = (x.dataset.r === 'all' ? TOTAL : +x.dataset.r) > free; x.classList.toggle('on', x.dataset.r === RM && !x.disabled); });
   if (RM && $('seg').querySelector(`[data-r="${RM}"]`).disabled) RM = null;
